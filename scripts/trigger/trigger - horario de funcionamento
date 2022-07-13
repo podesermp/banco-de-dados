@@ -1,0 +1,24 @@
+-- O HORÁRIO DE FUNCIONAMENTO DOS ÔNIBUS É A PARTIR DE 7h00 E FINALIZA ÀS 22h30
+
+-- criação da função
+create or replace function verifica_horario()
+Returns trigger  as
+$$
+declare
+    horario date;
+begin
+    if new.horario > '07:00' and new.horario < '22:30' then
+        return new;
+    else
+        raise notice 'Horário fora do prazo de funcionamento dos ônibus (7h00 - 22h30)';
+        return null;
+    end if;
+end;
+$$
+LANGUAGE 'plpgsql';
+
+
+create trigger verifica_horario_trig
+before insert or update on horario
+for each row
+execute procedure verifica_horario();

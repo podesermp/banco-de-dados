@@ -1,0 +1,106 @@
+create table if not exists Aluno (
+	id_aluno serial not null, -- PK de Aluno
+	nome varchar(50) not null,
+	faculdade varchar(30) not null,
+	end_rua varchar(30) not null,
+	end_num integer not null,
+	end_bairro varchar(20) not null,
+	end_cidade varchar(20) not null
+);
+
+create table if not exists Aula(
+	id_aula serial not null, -- PK de Aula
+	nome varchar(30) not null,
+	faculdade varchar(30) not null,
+	curso varchar(30) not null,
+	horario time not null
+);
+
+create table if not exists Alu_assiste_aula(
+	id_aula integer not null, -- FK para Aula
+	id_aluno integer not null -- FK para Aluno
+);
+
+create table if not exists Onibus(
+	id_onibus serial not null, -- PK de Onibus
+	id_motorista integer not null, -- FK para onibus
+	nome varchar(30) not null,
+	qtd_poltronas integer not null
+);
+
+create table if not exists alu_pega_onibus(
+	id_aluno integer not null, -- FK para aluno
+	id_onibus integer not null -- FK para Onibus
+);
+
+create table if not exists Motorista(
+	id_motorista serial not null, -- PK de motorista
+	nome varchar(30) not null,
+	tel1 varchar(15) not null,
+	tel2 varchar(15),
+	end_rua varchar(30) not null,
+	end_num integer not null,
+	end_bairro varchar(20) not null,
+	end_cidade varchar(20) not null
+);
+
+create table if not exists Ponto_parada(
+	id_ponto_parada serial not null, -- PK de ponto de parada
+	nome varchar(30) not null,
+	end_rua varchar(30) not null,
+	end_num integer not null,
+	end_bairro varchar(20) not null,
+	end_cidade varchar(20) not null
+);
+
+create table if not exists horario(
+	id_horario serial not null,  -- PK de horario
+	horario time not null,
+	data date not null
+);
+
+create table if not exists onibus_para_parada(
+	id_onibus integer not null, -- FK para Onibus
+	id_ponto_parada integer not null -- FK para Ponto de parada
+);
+
+create table if not exists onibus_tem_horario(
+	id_onibus integer not null, -- FK para Onibus
+	id_horario integer not null -- FK para Horario
+);
+
+-- Criação das PK e das FK
+ALTER TABLE Aluno
+	ADD CONSTRAINT pk_aluno PRIMARY KEY(id_aluno);
+	
+ALTER TABLE Aula
+	ADD CONSTRAINT pk_aula PRIMARY KEY(id_aula);
+	
+ALTER TABLE Alu_assiste_aula
+	ADD CONSTRAINT id_aulaFk FOREIGN KEY (id_aula) REFERENCES Aula(id_aula),
+	ADD CONSTRAINT id_alunoFk FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno);
+
+ALTER TABLE Motorista
+	ADD CONSTRAINT pk_motorista PRIMARY KEY (id_motorista);
+
+ALTER TABLE Onibus
+	ADD CONSTRAINT pk_onibus PRIMARY KEY(id_onibus),
+	ADD CONSTRAINT id_motoristaFK FOREIGN KEY(id_motorista) REFERENCES Motorista(id_motorista);
+
+ALTER TABLE alu_pega_onibus
+	ADD CONSTRAINT id_onibusFk FOREIGN KEY (id_onibus) REFERENCES Onibus(id_onibus),
+	ADD CONSTRAINT id_alunoFk FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno);
+	
+ALTER TABLE Ponto_parada
+	ADD CONSTRAINT pk_ponto_parada PRIMARY KEY(id_ponto_parada);
+
+ALTER TABLE horario
+	ADD CONSTRAINT pk_horario PRIMARY KEY(id_horario);
+
+ALTER TABLE onibus_para_parada
+	ADD CONSTRAINT id_onibusFk FOREIGN KEY (id_onibus) REFERENCES Onibus(id_onibus),
+	ADD CONSTRAINT id_ponto_paradaFk FOREIGN KEY (id_ponto_parada) REFERENCES Ponto_parada(id_ponto_parada);
+
+ALTER TABLE onibus_tem_horario
+	ADD CONSTRAINT id_onibusFk FOREIGN KEY (id_onibus) REFERENCES Onibus(id_onibus),
+	ADD CONSTRAINT id_horarioFk FOREIGN KEY (id_horario) REFERENCES horario(id_horario);

@@ -1,0 +1,247 @@
+-- Aluno
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Marcos Paulo Rocha Rodrigues', 'Universidade Federal do Ceará', 'Rua josé de alencar',  562, 'Centro', 'Quixadá');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Guilherme', 'Universidade Federal do Ceará', 'Rua Rodrigues Junior',  562, 'Centro', 'Quixadá');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Ricardo', 'Universidade Federal do Ceará', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Junior', 'Universidade Federal do Ceará', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Damasceno', 'Universidade Federal do Ceará', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Robson', 'Universidade Federal do Ceará', 'Travessa Tiradentes',  563, 'Centro', 'Quixadá');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Marta de Sousa Rocha Rodrigues', 'Universidade Federal do Ceará', 'Rua Osvaldo Primo Caxilé',  1270, 'Cruzeiro', 'Itapipoca');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('José Paulo Rodrigues', 'Universidade Federal do Ceará', 'Rua Osvaldo Primo Caxilé',  1270, 'Cruzeiro', 'Itapipoca');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Juliana Soura Teixeira', 'Universidade Federal do Ceará', 'Rua Dr Abdnago',  563, 'Pici', 'Fortaleza');
+INSERT INTO Aluno(nome,faculdade,end_rua, end_num, end_bairro, end_cidade) 
+VALUES ('Tarço Israel', 'Universidade Federal do Ceará', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+
+-- Aula
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Lógica para programação', 'Universidade Federal do Ceará', 'Engenharia de computação', '15:30');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Computação Gráfica', 'Universidade Federal do Ceará', 'Ciência da computação', '08:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Sistemas Digitais', 'Universidade Federal do Ceará', 'Engenharia de computação', '13:30');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Desenho Técnico I', 'Universidade Federal do Ceará', 'Design Digital', '10:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Redes de alta velocidade', 'Universidade Federal do Ceará', 'Redes de computadores', '18:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Linux', 'Universidade Federal do Ceará', 'Redes de computadores', '20:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Aprendizado de máquina', 'Universidade Federal do Ceará', 'Ciencia da computação', '10:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Programação concorrente', 'Universidade Federal do Ceará', 'Engenharia de software', '15:30');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Matemática básica', 'Universidade Federal do Ceará', 'Engenharia de computação', '13:30');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Introdução a SI', 'Universidade Federal do Ceará', 'Sistema de informação', '10:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Introdução a Odontologia', 'Unicatólica', 'Odontologia', '10:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Processos de produção', 'Unicatólica', 'Engenharia de produção', '10:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Introdução a SI', 'Unicatólica', 'Sistema de informação', '08:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Introdução a SI', 'Cisne', 'Sistema de informação', '07:00');
+INSERT INTO Aula(nome, faculdade, curso, horario)
+VALUES ('Introdução Medicina', 'Estácio', 'Medicina', '07:00');
+
+-- Alu_assiste_aula	
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (2,1);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (2,2);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (3,4);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (3,5);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (5,2);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (4,6);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (11,3);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (10,9);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (2,10);
+INSERT INTO alu_assiste_aula(id_aula, id_aluno)
+values (7,8);
+
+-- motorista
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Valdemi', '88996367144', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+INSERT INTO motorista(nome, tel1, tel2, end_rua, end_num, end_bairro, end_cidade)
+values('Raimundo', '88996367144', '85999262735', 'Rua Pe Anchieta',  1206, 'Baviera', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Fabiano', '88996367144', 'Rua josé do Patrocinio',  154, 'Carrascal', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Dede', '88996367144', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Romário', '88999600346', 'Rua dos crente',  1728, 'Putiú', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Ronaldo', '88996367144', 'Rua los anjos',  65, 'Centro', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Genival', '88996367144', 'Rua josé de alencar',  563, 'Centro', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Marcos', '85996367144', 'Rua josé de alencar',  265, 'Alto são francisco', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Francisco', '88996367144', 'Rua da lama',  1569, 'Cedro', 'Quixadá');
+INSERT INTO motorista(nome, tel1, end_rua, end_num, end_bairro, end_cidade)
+values('Diogo', '88996367144', 'Rua joão de alencar',  5634, 'Gogó', 'Quixadá');
+
+-- Onibus
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(1, 'amarelo', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(2, 'azul', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(3, 'branco', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(4, 'católica', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(5, 'amarelo', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(6, 'branco', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(7, 'católica', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(8, 'amarelo', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(9, 'azul', 45);
+INSERT INTO Onibus(id_motorista, nome, qtd_poltronas)
+values(10, 'branco', 45);
+
+-- alu_pega_onibus
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(1,3);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(10,2);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(6,3);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(3,4);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(1,9);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(5,9);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(9,10);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(1,4);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(10,3);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(7,6);
+INSERT INTO alu_pega_onibus(id_aluno, id_onibus)
+VALUES(6,3);
+
+
+-- Horário
+INSERT INTO horario(horario, data)
+VALUES('15:30', '2022-06-23');
+INSERT INTO horario(horario, data)
+VALUES('10:00', '2022-06-23');
+INSERT INTO horario(horario, data)
+VALUES('22:00', '2022-06-23');
+INSERT INTO horario(horario, data)
+VALUES('07:00', '2022-06-23');
+INSERT INTO horario(horario, data)
+VALUES('15:30', '2022-06-24');
+INSERT INTO horario(horario, data)
+VALUES('13:30', '2022-06-24');
+INSERT INTO horario(horario, data)
+VALUES('15:30', '2022-06-25');
+INSERT INTO horario(horario, data)
+VALUES('08:00', '2022-06-26');
+INSERT INTO horario(horario, data)
+VALUES('18:00', '2022-06-25');
+INSERT INTO horario(horario, data)
+VALUES('15:30', '2022-06-25');
+
+
+-- Ponto de parada
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('garimpeiro', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('garimpeiro', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('construtec', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('seminario', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('praça do leão', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('rodoviaria', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('anexo', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('ufc', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('ifce', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+INSERT INTO ponto_parada(nome, end_rua, end_num, end_bairro, end_cidade)
+VALUES('cedro', 'rua rodrigues junior', 563, 'centro' ,'quixadá');
+
+-- Onibus para parada de onibus
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(1,2);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(2,2);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(3,4);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(3,5);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(4,6);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(3,7);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(4,10);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(2,11);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(3,3);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(2,2);
+INSERT INTO onibus_para_parada(id_onibus, id_ponto_parada)
+VALUES(10,11);
+
+
+-- Onibus tem horário
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(1,1);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(1,2);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(2,1);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(2,5);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(4,3);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(5,10);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(6,10);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(10,6);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(8,7);
+INSERT INTO onibus_tem_horario(id_onibus, id_horario)
+VALUES(9,1);
+
+select * from onibus_tem_horario
+select * from onibus_para_parada
+select * from horario
+select * from ponto_parada
+select * from aluno
+select * from alu_assiste_aula
+select * from aula
+select * from alu_pega_onibus
+select * from onibus
+select * from motorista

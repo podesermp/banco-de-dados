@@ -1,0 +1,23 @@
+-- A QUANTIDADE DE POLTRONAS NA TABELA ÔNIBUS NÃO PODE SER MENOR QUE 0
+
+-- criação da função
+create or replace function verifica_poltronas()
+Returns trigger  as
+$$
+declare
+begin
+    if new.qtd_poltronas > 0 then
+        return new;
+    else
+        raise notice 'A quantidade de poltronas deve ser maior que 0!';
+        return null;
+    end if;
+end;
+$$
+LANGUAGE 'plpgsql';
+
+
+create trigger verifica_qtd_poltronas_trig
+before insert or update on onibus
+for each row
+execute procedure verifica_poltronas();

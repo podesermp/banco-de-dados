@@ -1,0 +1,83 @@
+-- View para retornar nome dos alunos
+CREATE VIEW NOME_ALUNO AS(
+    SELECT NOME
+    FROM ALUNO
+)
+
+-- View para retornar os horários dos ônibus
+CREATE VIEW horario_onibus as(
+    SELECT P.HORARIO, P.DATA
+    FROM HORARIO P
+)
+
+-- View para retornar o nome dos ônibus cadastrados
+CREATE VIEW nome_onibus as(
+    SELECT A.NOME
+    FROM ONIBUS A
+)
+
+-- View para retornar o nome de todos os motoristas
+CREATE VIEW nome_motoristas as(
+    SELECT M.NOME
+    FROM MOTORISTA M
+)
+
+-- View para retornar o nome do aluno e as suas aulas
+CREATE VIEW aluno_aulas as(
+    SELECT A.NOME AS ALUNO, P.NOME AS DISCIPLINA
+    FROM ALUNO A, AULA P, ALU_ASSISTE_AULA M
+    WHERE A.ID_ALUNO = M.ID_ALUNO AND
+        M.ID_AULA = P.ID_AULA
+)
+
+-- View para retornar o horario de cada ônibus
+CREATE VIEW horario_tem_onibus as(
+    SELECT A.NOME, P.HORARIO
+    FROM HORARIO P, ONIBUS A, ONIBUS_TEM_HORARIO M
+    WHERE P.ID_HORARIO = M.ID_HORARIO AND
+        M.ID_ONIBUS = A.ID_ONIBUS
+)
+
+-- View para retornar o nome dos pontos de parada
+CREATE VIEW ponto_de_parada as(
+    SELECT P.NOME
+    FROM PONTO_PARADA P
+)
+
+-- View para retornar o nome do aluno, horario das aulas e horario do onibus que ele vai pegar
+CREATE VIEW horario_aluno_aulas as(
+    SELECT A.NOME, T.HORARIO as Horario_aula, G.HORARIO as Horario_Onibus
+    FROM ALUNO A, ONIBUS_TEM_HORARIO P, AULA T, ONIBUS C, ALU_ASSISTE_AULA K, HORARIO G
+    WHERE K.id_aluno = A.id_aluno and
+          T.id_aula = K.id_aula and
+          C.id_onibus=P.id_onibus and
+          G.id_horario = P.id_horario and
+          T.horario=G.horario
+)
+
+-- View para mostrar a quantidade de poltronas de cada ônibus
+CREATE VIEW poltronas as(
+	SELECT P.NOME, P.QTD_POLTRONAS
+	FROM ONIBUS P
+)
+
+--View para retornar a quantidade de poltronas no ônibus em cada horário
+CREATE VIEW poltronas_horarios as(
+	SELECT P.NOME, P.QTD_POLTRONAS
+	FROM ONIBUS P, HORARIO G, ONIBUS_TEM_HORARIO K
+	WHERE P.ID_ONIBUS = K.ID_ONIBUS AND
+		G.ID_HORARIO = K.ID_HORARIO
+)
+
+
+--  Teste das views
+select * from aluno_aulas
+select * from horario_aluno_aulas
+select * from horario_onibus
+select * from horario_tem_onibus
+select * from nome_aluno
+select * from nome_motoristas
+select * from nome_onibus
+select * from poltronas
+select * from poltronas_horarios
+select * from ponto_de_parada
